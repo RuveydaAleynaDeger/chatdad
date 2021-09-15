@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
 module.exports = () => {
-	mongoose.connect("mongodb://localhost/chatdad", {useUnifiedTopology: true, useNewUrlParser: true});
+	mongoose.connect(process.env.DB_STRING,{ useNewUrlParser: true,useUnifiedTopology: true  });
 
 	mongoose.connection.on('open', () => {
 		console.log('MongoDB: Connected');
